@@ -1,0 +1,9 @@
+services:
+  nginx:
+    image: nginx:alpine
+    container_name: photos-nginx
+    network_mode: host
+    restart: unless-stopped
+    volumes:
+      - ./conf.d:/etc/nginx/conf.d:ro
+      - ./letsencrypt:/etc/letsencrypt:ro
